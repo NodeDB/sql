@@ -101,6 +101,62 @@ module.exports = class SQL {
         default: [],
         required: true
       }]
+    }, {
+      id: 'mariadb',
+      name: 'MariaDB',
+      lang: 'text/x-mariadb',
+      logo: 'mariadb.png',
+      loginForm: [{
+        label: 'HOST',
+        key: 'host',
+        type: 'text',
+        default: 'localhost',
+        required: true
+      }, {
+        label: 'PORT',
+        key: 'port',
+        type: 'number',
+        default: 13307,
+        required: true
+      }, {
+        label: 'USERNAME',
+        key: 'user',
+        default: 'root',
+        type: 'text',
+      }, {
+        label: 'PASSWORD',
+        key: 'password',
+        default: 'q1w2e3r4',
+        type: 'password',
+      }]
+    }, {
+      id: 'mssql',
+      name: 'MS-SQL',
+      lang: 'text/x-mssql',
+      logo: 'mssql.png',
+      loginForm: [{
+        label: 'HOST',
+        key: 'host',
+        type: 'text',
+        default: 'localhost',
+        required: true
+      }, {
+        label: 'PORT',
+        key: 'port',
+        type: 'number',
+        default: 1443,
+        required: true
+      }, {
+        label: 'USERNAME',
+        key: 'user',
+        default: 'sa',
+        type: 'text',
+      }, {
+        label: 'PASSWORD',
+        key: 'password',
+        default: 'q1w2e3r4',
+        type: 'password',
+      }]
     }]
   }
 
