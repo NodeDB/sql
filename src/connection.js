@@ -19,19 +19,25 @@ module.exports = class Connection {
   }
 
   connect () {
-    return this.connection.select(1);
+    return this.connection.select(1)
+      .then(() => this.connection);
   }
 
   disconnect () {
-    return this.connection.close();
+    // return this.connection.close();
+  }
+
+  navTree () {
+    return 33;
   }
 
   query (connection, query, replacements = []) {
-    return connection.query(query, {
-      replacements,
-    }).then(([results, metadata]) => {
-      return results;
-    });
+    return connection.raw(query);
+    // return connection.query(query, {
+    //   replacements,
+    // }).then(([results, metadata]) => {
+    //   return results;
+    // });
   }
 
   setDb () {
